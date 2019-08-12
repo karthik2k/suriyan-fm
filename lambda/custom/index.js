@@ -5,15 +5,15 @@ const Alexa = require('ask-sdk-core');
 
 const STREAMS = [
   {
-    "token": "stream-12",
-    "url": 'https://streaming.radionomy.com/RadioXUS?lang=en-US&appName=iTunes.m3u',
+    "token": "suriyan-fm-1",
+    "url": 'http://51.15.200.126:8002/3',
     "metadata" : {
       "title": "Stream One",
       "subtitle": "A subtitle for stream one",
       "art": {
         "sources": [
           {
-            "contentDescription": "example image",
+            "contentDescription": "Suriyan FM image",
             "url": "https://s3.amazonaws.com/cdn.dabblelab.com/img/audiostream-starter-512x512.png",
             "widthPixels": 512,
             "heightPixels": 512
@@ -115,7 +115,7 @@ const CancelAndStopIntentHandler = {
 
 const PlaybackStoppedIntentHandler = {
   canHandle(handlerInput) {
-    return handlerInput.requestEnvelope.request.type === 'PlaybackController.PauseCommandIssued' || 
+    return handlerInput.requestEnvelope.request.type === 'PlaybackController.PauseCommandIssued' ||
             handlerInput.requestEnvelope.request.type === 'AudioPlayer.PlaybackStopped';
   },
   handle(handlerInput) {
